@@ -1,9 +1,10 @@
-// Simple runner: takes a generator and returns events
-export function runAlgorithm(generator) {
-    const events = [];
-    for (const event of generator) {
-        events.push(event);
-    }
+// Simple runner: takes a generator (algorithm) and returns events
+export function runner(generator) {
+    const events = []
 
-    return events;
+    // iterator loop, repeatedly calls .next()
+    for (const event of generator) {
+        events.push(event)
+    }
+    return events
 }
