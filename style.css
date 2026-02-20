@@ -1,0 +1,23 @@
+/* style.css */
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#array-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  margin-top: 50px;
+}
+
+.bar {
+  width: 40px;
+  background-color: gray;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: white;
+}
