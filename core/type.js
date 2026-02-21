@@ -3,7 +3,9 @@
 export const EventType = { 
     COMPARE: 'compare',
     SWAP: 'swap',
+    OVERWRITE: "overwrite",
     MERGE: 'merge',
     MARK: 'mark',
+    RANGE: 'range',
     DONE: 'done'
 }
