@@ -5,7 +5,7 @@ import { EventType } from "../../core/type.js"
 export function* bubbleSort(arr) {
   const n = [...arr].length
 
-  for (let i = 0; i < n - 1; i++) {
+  for (let i = 0; i < n; i++) {
     let swapped = false;
 
     for (let j = 0; j < n - i - 1; j++) {
@@ -32,23 +32,24 @@ export function* bubbleSort(arr) {
     }
 
 
-    // No swaps occur, then break
-    if (!swapped) {
-      for (let k = 0; k < n - i - 1; k++) {
-        yield {
-          type: EventType.MARK,
-          index: k
-        }
-      }
-      break
-    }
-    else {
+    // // No swaps occur, then break
+    // if (!swapped) {
+    //   console.log(arr[i])
+    //   for (let k = 0; k < n - i; k++) {
+    //     yield {
+    //       type: EventType.MARK,
+    //       index: k
+    //     }
+    //   }
+    //   break
+    // }
+    // else {
       // yield marked sorted element
       yield {
         type: EventType.MARK,
         index: n - i - 1 // last index = latest sorted 
       }
-    }
+    // }
   }
 
   // yield done
