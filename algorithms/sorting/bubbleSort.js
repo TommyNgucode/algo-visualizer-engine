@@ -31,25 +31,11 @@ export function* bubbleSort(arr) {
       }
     }
 
-
-    // // No swaps occur, then break
-    // if (!swapped) {
-    //   console.log(arr[i])
-    //   for (let k = 0; k < n - i; k++) {
-    //     yield {
-    //       type: EventType.MARK,
-    //       index: k
-    //     }
-    //   }
-    //   break
-    // }
-    // else {
-      // yield marked sorted element
-      yield {
-        type: EventType.MARK,
-        index: n - i - 1 // last index = latest sorted 
-      }
-    // }
+    // yield marked sorted element
+    yield {
+      type: EventType.MARK,
+      index: n - i - 1 // last index = latest sorted 
+    }
   }
 
   // yield done

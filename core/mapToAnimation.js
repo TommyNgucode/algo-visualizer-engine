@@ -20,6 +20,14 @@ export function mapToAnimation(event) {
         // case EventType.MERGE:
         // case EventType.OVERWRITE:
         // case EventType.RANGE:
+
+        case EventType.OVERWRITE:
+            return {
+                action: 'overwrite',
+                indices: event.indices,
+                value: event.value,
+                duration: 400
+            }
         
         case EventType.SWAP:
              return {
