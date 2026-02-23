@@ -10,7 +10,7 @@ export function* insertionSort(arr){
         while (j >= 0 && arr[j] > key) {
 
             yield {
-                action: EventType.COMPARE,
+                type: EventType.COMPARE,
                 indices: [j, j + 1]
             }
 
@@ -18,7 +18,7 @@ export function* insertionSort(arr){
             
 
             yield {
-                action: EventType.OVERWRITE,
+                type: EventType.OVERWRITE,
                 indices: [j + 1],
                 value: arr[j]
             }
@@ -28,18 +28,24 @@ export function* insertionSort(arr){
         arr[j + 1] = key
         
         yield {
-                action: EventType.OVERWRITE,
+                type: EventType.OVERWRITE,
                 indices: [j + 1],
-                value: arr[j]
+                value: key
             }
         // yield marked sorted element
+        // yield {
+        //     type: EventType.MARK,
+        //     index: i // last index = latest sorted 
+        // }
+
+    }   
+    
+    for (let i = 0; i < arr.length; i++) {
         yield {
             type: EventType.MARK,
             index: i // last index = latest sorted 
         }
-
-    }   
- 
+    }
 
     yield {
         type: EventType.DONE
